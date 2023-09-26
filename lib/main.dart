@@ -5,6 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,7 +38,8 @@ class _ProductListState extends State<ProductList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Shopping App'),
+        title: Text('Product List'),
+        centerTitle: true,
         actions: [
           IconButton(
             icon: Icon(Icons.shopping_cart),
@@ -115,7 +117,7 @@ class _ProductItemState extends State<ProductItem> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: Text('OK'),
             ),
           ],
         );
@@ -140,15 +142,16 @@ class CartPage extends StatelessWidget {
       }
     }
 
-    int totalUniqueItemsInCart = uniqueProductNames.length;
+    int totalUniqueProductsInCart = uniqueProductNames.length;
 
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cart Page'),
+        title: Text('Cart'),
+        centerTitle: true,
       ),
       body: Center(
-        child: Text('Total Items in Cart: $totalUniqueItemsInCart'),
+        child: Text('Total Product: $totalUniqueProductsInCart'),
       ),
     );
   }
